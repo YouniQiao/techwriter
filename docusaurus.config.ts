@@ -8,16 +8,16 @@ const beian = '闽ICP备2020017848号-3'
 const beian1 = '闽公网安备35021102000847号'
 
 const config: Config = {
-  title: '愧怍',
-  url: 'https://kuizuo.me',
+  title: '技术写作',
+  url: 'https://techwriter.cn',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'kuizuo',
+  organizationName: 'YouniQiao',
   projectName: 'blog',
   customFields: {
-    bio: '道阻且长，行则将至',
+    bio: '技术写作者的修养',
     description:
-      '是一个由愧怍创建的个人博客，主要分享编程开发知识和项目，该网站基于 React 驱动的静态网站生成器 Docusaurus 构建。',
+      '是一个技术写作者的个人网站，主要分享技术写作的理念及经验，该网站基于 React 驱动的静态网站生成器 Docusaurus 构建。',
   },
   themeConfig: {
     // announcementBar: {
@@ -28,42 +28,50 @@ const config: Config = {
     metadata: [
       {
         name: 'author',
-        content: '愧怍',
+        content: 'YouniQiao',
       },
       {
         name: 'keywords',
-        content: 'blog, javascript, typescript, node, react, vue, web',
+        content: 'Technical Writing',
       },
       {
         name: 'keywords',
-        content: '编程爱好者, Web开发者, 写过爬虫, 学过逆向, 主攻ts全栈',
+        content: '技术写作, 技术传播, 开发者文档, 风格手册, 写作指导',
       },
     ],
     docs: {
       sidebar: {
-        hideable: true,
+        hideable: false,
       },
     },
     navbar: {
       logo: {
-        alt: '愧怍',
-        src: 'img/logo.webp',
-        srcDark: 'img/logo.webp',
+        alt: '技术写作',
+        src: 'img/logo.svg',
+        srcDark: 'img/logo.svg',
       },
       hideOnScroll: true,
       items: [
-        { label: '博客', position: 'right', to: 'blog' },
-        { label: '项目', position: 'right', to: 'project' },
-        { label: '友链', position: 'right', to: 'friends' },
-        { label: '关于', position: 'right', to: 'about' },
+        { label: '主页', position: 'left', to: '/' },
+        { label: '博客', position: 'left', to: 'blog' },
+        { label: '文档', position: 'left', to: 'docs/docusaurus-guides' },
         {
-          label: '更多',
-          position: 'right',
+          label: '资源',
+          position: 'left',
           items: [
-            { label: '归档', to: 'blog/archive' },
-            { label: '主题魔改', to: 'docs/docusaurus-guides' },
+            { label: '技术写作组织', to: 'project' },
+            { label: '技术写作者', to: 'friends' },
           ],
         },
+        { label: '关于', position: 'left', to: 'about' },
+        //{
+        //  label: '更多',
+        //  position: 'left',
+        //  items: [
+        //    { label: '归档', to: 'blog/archive' },
+        //    { label: '主题魔改', to: 'docs/docusaurus-guides' },
+        //  ],
+        //},
         // {
         //   type: 'localeDropdown',
         //   position: 'right',
@@ -117,11 +125,7 @@ const config: Config = {
         },
       ],
       copyright: `
-        <p style="margin-bottom: 0;"><a href="http://beian.miit.gov.cn/">${beian}</a></p>
-        <p style="display: inline-flex; align-items: center;"><img style="height:20px;margin-right: 0.5rem;" src="/img/police.png" alt="police" height="20"/><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${
-          beian1.match(/\d+/)?.[0]
-        }" >${beian1}</a></p>
-        <p>Copyright © 2020 - ${new Date().getFullYear()} kuizuo. | Built with Docusaurus.</p>
+        <p>Copyright © 2025 - ${new Date().getFullYear()}. | Built with Docusaurus.</p>
         `,
     },
     algolia: {
@@ -147,10 +151,10 @@ const config: Config = {
       ],
     },
     giscus: {
-      repo: 'kuizuo/blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkzOTc2MjU2MTI=',
-      category: 'General',
-      categoryId: 'DIC_kwDOF7NJDM4CPK95',
+      repo: 'YouniQiao/techwriter',
+      repoId: 'R_kgDOPkbS5A',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOPkbS5M4CvtsJ',
       theme: 'light',
       darkTheme: 'dark_dimmed',
     } satisfies Partial<GiscusConfig>,
@@ -182,10 +186,10 @@ const config: Config = {
         sitemap: {
           priority: 0.5,
         },
-        gtag: {
-          trackingID: 'G-S4SD5NXWXF',
-          anonymizeIP: true,
-        },
+        //gtag: {
+        //  trackingID: 'G-S4SD5NXWXF',
+        //  anonymizeIP: true,
+        //},
         debug: process.env.NODE_ENV === 'development',
       } satisfies Preset.Options,
     ],
@@ -218,9 +222,9 @@ const config: Config = {
       {
         path: 'blog',
         editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-          `https://github.com/kuizuo/blog/edit/main/${blogDirPath}/${blogPath}`,
+          `https://github.com/YouniQiao/techwriter/edit/main/${blogDirPath}/${blogPath}`,
         editLocalizedFiles: false,
-        blogDescription: '代码人生：编织技术与生活的博客之旅',
+        blogDescription: '技术写作：既是工作也是事业。',
         blogSidebarCount: 10,
         blogSidebarTitle: '博文',
         postsPerPage: 12,
@@ -229,9 +233,9 @@ const config: Config = {
           defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         feedOptions: {
           type: 'all',
-          title: '愧怍',
-          description: 'feedId:41215011978385457+userId:41840354283324416',
-          copyright: `Copyright © ${new Date().getFullYear()} 愧怍 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
+          title: '技术写作',
+          description: '既是工作也是事业。',
+          copyright: `Copyright © ${new Date().getFullYear()}  Built with Docusaurus.`,
         },
       },
     ],
@@ -256,11 +260,11 @@ const config: Config = {
                 tagName: 'script',
                 innerHTML: `
     (${function () {
-      console.log(
-        `%c Kz Blog %c https://github.com/kuizuo/blog`,
-        'color: #fff; margin: 1em 0; padding: 5px 0; background: #12affa;',
-        'margin: 1em 0; padding: 5px 0; background: #efefef;',
-      )
+      //console.log(
+      //  `%c Kz Blog %c https://github.com/kuizuo/blog`,
+      //  'color: #fff; margin: 1em 0; padding: 5px 0; background: #12affa;',
+      //  'margin: 1em 0; padding: 5px 0; background: #efefef;',
+      //)
 
       const motto = `
 This Webisite Powered By Kz Blog.
@@ -285,7 +289,7 @@ Love what you do and do what you love.
       tagName: 'meta',
       attributes: {
         name: 'description',
-        content: '愧怍的个人博客',
+        content: '技术写作理念及技能传播',
       },
     },
   ],

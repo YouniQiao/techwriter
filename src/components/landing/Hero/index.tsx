@@ -40,7 +40,7 @@ function Name() {
         e.currentTarget.style.setProperty('--y', `${e.clientY}px`)
       }}
     >
-      <Translate id="homepage.hero.greet">你好! 我是</Translate>
+      <Translate id="homepage.hero.greet">聊聊</Translate>
       <span
         className={styles.name}
         onMouseMove={(e) => {
@@ -49,9 +49,10 @@ function Name() {
           e.currentTarget.style.setProperty('--mouse-y', `${bounding.y}px`)
         }}
       >
-        <Translate id="homepage.hero.name">愧怍</Translate>
+        <Translate id="homepage.hero.name">技术写作</Translate>
       </span>
-      <span className="ml-1">👋</span>
+      {//<span className="ml-1">👋</span>
+      }
     </motion.div>
   )
 }
@@ -63,12 +64,14 @@ export default function Hero() {
         <Name />
         <motion.p custom={2} initial="hidden" animate="visible" variants={variants} className="max-lg:px-4">
           <Translate id="homepage.hero.text">
-            在这里我会分享各类技术栈所遇到问题与解决方案，带你了解最新的技术栈以及实际开发中如何应用，并希望我的开发经历对你有所启发。
+          技术写作以准确、清晰、专业的语言，将复杂信息转化为易于理解的文档，服务于特定用户与场景。
           </Translate>
         </motion.p>
+        {/*
         <motion.div custom={3} initial="hidden" animate="visible" variants={variants}>
           <SocialLinks />
         </motion.div>
+        */}
 
         <motion.div className="mt-4 flex gap-2" custom={4} initial="hidden" animate="visible" variants={variants}>
           <MovingButton
@@ -76,7 +79,7 @@ export default function Hero() {
             className="relative z-10 flex items-center rounded-2xl border border-solid border-neutral-200 bg-background px-5 py-3 text-center text-base font-semibold dark:border-neutral-800"
           >
             <a href="/about" className="font-semibold">
-              <Translate id="hompage.hero.introduce">自我介绍</Translate>
+              <Translate id="hompage.hero.introduce">关于</Translate>
             </a>
           </MovingButton>
         </motion.div>
