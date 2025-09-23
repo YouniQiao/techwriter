@@ -79,7 +79,7 @@ export default function Hero() {
             className="relative z-10 flex items-center rounded-2xl border border-solid border-neutral-200 bg-background px-5 py-3 text-center text-base font-semibold dark:border-neutral-800"
           >
             <a href="/about" className="font-semibold">
-              <Translate id="hompage.hero.introduce">关于</Translate>
+              <Translate id="hompage.hero.introduce">从这里开始</Translate>
             </a>
           </MovingButton>
         </motion.div>
